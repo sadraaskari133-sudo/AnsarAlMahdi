@@ -430,12 +430,20 @@ section{
   font-size:22px;
 }
 
-.archive{display:none;padding-top:32px}
-.archive.active{display:block;animation:fadeUp .35s ease}
-
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(10px)}
-  to{opacity:1;transform:none}
+/* اصلاح بخش آرشیو برای جلوگیری از ناپدید شدن تصاویر و پرش رندرینگ */
+.archive{
+  max-height:0;
+  overflow:hidden;
+  opacity:0;
+  visibility:hidden;
+  transition:max-height .4s ease, opacity .3s ease, visibility .3s ease;
+  padding-top:0;
+}
+.archive.active{
+  max-height:3000px;
+  opacity:1;
+  visibility:visible;
+  padding-top:32px;
 }
 
 .back{
@@ -515,7 +523,6 @@ section{
 }
 
 .gallery img{
-  display:block;
   width:100%;
   height:100%;
   object-fit:cover;
@@ -881,35 +888,35 @@ footer strong{color:#fff}
               aria-label="نمایش تصویر اول">
               <img src="assets/gallery-01.jpg"
                 alt="گزارش تصویری فاطمیه - تصویر اول"
-                loading="eager" decoding="async">
+                loading="lazy">
             </button>
 
             <button type="button" onclick="showImage(1)"
               aria-label="نمایش تصویر دوم">
               <img src="assets/gallery-02.jpg"
                 alt="گزارش تصویری فاطمیه - تصویر دوم"
-                loading="eager" decoding="async">
+                loading="lazy">
             </button>
 
             <button type="button" onclick="showImage(2)"
               aria-label="نمایش تصویر سوم">
               <img src="assets/gallery-03.jpg"
                 alt="گزارش تصویری فاطمیه - تصویر سوم"
-                loading="eager" decoding="async">
+                loading="lazy">
             </button>
 
             <button type="button" onclick="showImage(3)"
               aria-label="نمایش تصویر چهارم">
               <img src="assets/gallery-04.jpg"
                 alt="گزارش تصویری فاطمیه - تصویر چهارم"
-                loading="eager" decoding="async">
+                loading="lazy">
             </button>
 
             <button type="button" onclick="showImage(4)"
               aria-label="نمایش تصویر پنجم">
               <img src="assets/gallery-05.jpg"
                 alt="گزارش تصویری فاطمیه - تصویر پنجم"
-                loading="eager" decoding="async">
+                loading="lazy">
             </button>
 
           </div>
@@ -1055,14 +1062,6 @@ const archive=document.getElementById('archive');
 
 function openArchive(){
   archive.classList.add('active');
-
-  // Start loading the original gallery files and decode them as they arrive.
-  archive.querySelectorAll('.gallery img').forEach(img => {
-    img.loading = 'eager';
-    img.decoding = 'async';
-    if (img.decode) img.decode().catch(() => {});
-  });
-
   archive.scrollIntoView({
     behavior:'smooth',
     block:'start'
