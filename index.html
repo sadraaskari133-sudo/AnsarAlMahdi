@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0b0c0d">
+<meta name="description" content="پایگاه رسمی هیئت انصارالمهدی؛ نور هدایت و آرشیو مراسم عزاداری">
+<title>هیئت انصارالمهدی (عج)</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
+<style>
+@font-face{
+  font-family:'Estedad';
+  src:url('assets/Estedad-Bold.ttf') format('truetype');
+  font-weight:700;
+  font-style:normal;
+  font-display:swap;
+}
+
+:root{
+  --bg:#0b0c0d;
+  --panel:#151719;
+  --panel2:#1d2022;
+  --gold:#d51f2a;
+  --text:#f7f7f7;
+  --muted:#b9b4ab;
+  --line:rgba(213,31,42,.28);
+  --nav-h:64px;
+}
+
+*{box-sizing:border-box}
+
+html{
+  scroll-behavior:smooth;
+  -webkit-text-size-adjust:100%;
+}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Estedad','Vazirmatn',Tahoma,Arial,sans-serif;
+  font-weight:400;
+  line-height:1.9;
+  overflow-x:hidden;
+  -webkit-tap-highlight-color:transparent;
+}
+
+h1,h2,h3,.brand,.btn,strong,b{font-weight:700}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;color:inherit}
+
+:focus-visible{
+  outline:2px solid var(--gold);
+  outline-offset:3px;
+  border-radius:6px;
+}
+
+.wrap{width:min(1120px,92%);margin:auto}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:rgba(11,12,13,.94);
+  border-bottom:1px solid var(--line);
+}
+
+@supports (backdrop-filter:blur(1px)){
+  @media (min-width:701px){
+    header{backdrop-filter:blur(14px)}
+  }
+}
+
+.nav{
+  height:var(--nav-h);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:14px;
+  min-width:0;
+}
+
+.brand>span:last-child{min-width:0}
+
+.seal{
+  flex:none;
+  width:38px;
+  height:38px;
+  border:1px solid var(--gold);
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  color:#ed3943;
+  font-size:19px;
+}
+
+.brand small{
+  display:block;
+  color:var(--muted);
+  font-size:10px;
+  font-weight:400;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.links{display:flex;gap:24px;font-size:13px}
+.links a{position:relative;padding:4px 0}
+.links a:hover{color:#fff}
+
+.links a::after{
+  content:"";
+  position:absolute;
+  right:0;
+  left:0;
+  bottom:-2px;
+  height:1px;
+  background:var(--gold);
+  transform:scaleX(0);
+  transition:transform .25s;
+}
+
+.links a:hover::after{transform:scaleX(1)}
+
+.menu-toggle{
+  display:none;
+  width:44px;
+  height:44px;
+  border:1px solid var(--line);
+  background:#ffffff08;
+  border-radius:9px;
+  align-items:center;
+  justify-content:center;
+}
+
+.menu-toggle span{
+  display:block;
+  width:18px;
+  height:2px;
+  background:#fff;
+  position:relative;
+  transition:.25s;
+}
+
+.menu-toggle span::before,
+.menu-toggle span::after{
+  content:"";
+  position:absolute;
+  left:0;
+  width:18px;
+  height:2px;
+  background:#fff;
+  transition:.25s;
+}
+
+.menu-toggle span::before{top:-6px}
+.menu-toggle span::after{top:6px}
+.menu-toggle[aria-expanded="true"] span{background:transparent}
+
+.menu-toggle[aria-expanded="true"] span::before{
+  top:0;
+  transform:rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] span::after{
+  top:0;
+  transform:rotate(-45deg);
+}
+
+.mobile-links{
+  display:none;
+  flex-direction:column;
+  gap:2px;
+  padding:8px 4% 16px;
+  border-top:1px solid var(--line);
+}
+
+.mobile-links.open{display:flex}
+
+.mobile-links a{
+  padding:12px 14px;
+  border-radius:9px;
+  font-size:14px;
+  background:#ffffff05;
+}
+
+.mobile-links a:hover{background:#d51f2a1f}
+
+.hero{
+  min-height:calc(100svh - var(--nav-h));
+  display:flex;
+  align-items:center;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(ellipse at 50% 42%,rgba(57,28,25,.58),transparent 58%),
+    linear-gradient(180deg,#101112,#0b0c0d);
+}
+
+.hero::before,.hero::after{
+  content:"";
+  position:absolute;
+  width:min(420px,90vw);
+  aspect-ratio:1;
+  border:1px solid rgba(213,31,42,.12);
+  border-radius:50%;
+  top:80px;
+  right:-40%;
+}
+
+.hero::after{right:auto;left:-40%}
+
+.hero-inner{
+  position:relative;
+  z-index:1;
+  max-width:800px;
+  margin:auto;
+  padding:56px 0;
+}
+
+.bism{
+  color:#fff;
+  font-size:clamp(18px,4.5vw,27px);
+  margin-bottom:26px;
+}
+
+.eyebrow{
+  color:#ed3943;
+  font-size:12px;
+  letter-spacing:2px;
+}
+
+.hero h1{
+  font-size:clamp(30px,7vw,58px);
+  line-height:1.4;
+  margin:8px 0 12px;
+}
+
+.hero h1 span{color:#fff}
+
+.hero-logo{
+  width:min(440px,78vw);
+  height:auto;
+  max-height:58svh;
+  object-fit:contain;
+  margin:8px auto 18px;
+  filter:drop-shadow(0 10px 22px #0008);
+}
+
+@media(max-width:560px){
+  .hero-logo{
+    width:min(350px,82vw);
+    max-height:48svh;
+    margin:4px auto 16px;
+  }
+}
+
+.hero p{
+  color:#e9e4dc;
+  max-width:680px;
+  margin:18px auto 28px;
+  font-size:clamp(14px,3.6vw,15px);
+}
+
+.pill{
+  display:inline-block;
+  border:1px solid rgba(213,31,42,.65);
+  padding:6px 18px;
+  border-radius:30px;
+  color:#fff;
+  font-size:12px;
+}
+
+.hero-actions{
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  min-height:44px;
+  padding:10px 20px;
+  border-radius:9px;
+  border:1px solid var(--gold);
+  color:#fff;
+  background:var(--gold);
+  font-size:13px;
+  transition:transform .2s,background .2s;
+}
+
+.btn:hover{background:#ee3540}
+.btn:active{transform:scale(.98)}
+.btn.ghost{background:transparent}
+
+.small-btn{
+  min-height:44px;
+  padding:8px 18px;
+  border-radius:9px;
+  font-size:12px;
+  border:1px solid var(--line);
+  background:#ffffff0a;
+  color:#fff;
+  transition:background .2s;
+}
+
+.small-btn:hover{background:#d51f2a1f}
+
+section{
+  padding:clamp(48px,9vw,78px) 0;
+  content-visibility:auto;
+  contain-intrinsic-size:1px 700px;
+}
+
+.light{background:#111415}
+
+.section-head{text-align:center;margin-bottom:32px}
+
+.section-head .over{
+  color:#ed3943;
+  font-size:11px;
+  letter-spacing:2px;
+}
+
+.section-head h2{
+  font-size:clamp(22px,5vw,34px);
+  margin:4px 0 8px;
+}
+
+.section-head p{
+  color:var(--muted);
+  font-size:13px;
+  margin:0;
+}
+
+.hadith-card{
+  max-width:790px;
+  margin:auto;
+  padding:clamp(22px,5vw,34px);
+  background:linear-gradient(135deg,#1b201d,#141617);
+  border:1px solid var(--line);
+  border-radius:16px;
+  text-align:center;
+  box-shadow:0 20px 60px #0005;
+}
+
+.hadith-label{color:#ed3943;font-size:11px}
+
+.arabic{
+  font-family:'Amiri','Scheherazade New',serif;
+  color:#fff;
+  font-size:clamp(20px,5.5vw,31px);
+  line-height:2;
+  margin:14px 0;
+  word-break:break-word;
+}
+
+.translation{
+  font-size:clamp(14px,3.6vw,15px);
+  color:#e9e4dc;
+}
+
+.source{font-size:11px;color:var(--muted);margin-top:12px}
+
+.hadith-actions{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-top:22px;
+  flex-wrap:wrap;
+}
+
+.event-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px;
+}
+
+.event-card{
+  width:100%;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:linear-gradient(145deg,#1a1d1e,#111314);
+  padding:20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  text-align:right;
+  transition:.25s;
+}
+
+.event-card:hover{
+  border-color:var(--gold);
+  transform:translateY(-3px);
+}
+
+.event-card h3{
+  margin:0 0 4px;
+  font-size:clamp(16px,4.2vw,20px);
+}
+
+.event-card p{
+  margin:0;
+  color:var(--muted);
+  font-size:12px;
+}
+
+.event-icon{
+  flex:none;
+  width:48px;
+  height:48px;
+  display:grid;
+  place-items:center;
+  border-radius:12px;
+  background:#d51f2a1f;
+  color:#fff;
+  font-size:22px;
+}
+
+.archive{display:none;padding-top:32px}
+.archive.active{display:block;animation:fadeUp .35s ease}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(10px)}
+  to{opacity:1;transform:none}
+}
+
+.back{
+  background:none;
+  border:0;
+  color:#fff;
+  padding:8px 0 18px;
+  font-size:13px;
+  min-height:44px;
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+
+.archive-title{
+  border-right:3px solid var(--gold);
+  padding-right:14px;
+  margin-bottom:22px;
+}
+
+.archive-title h2{
+  margin:0;
+  font-size:clamp(20px,5vw,27px);
+}
+
+.archive-title p{
+  margin:3px 0 0;
+  color:var(--muted);
+  font-size:12px;
+}
+
+.content-card{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:13px;
+  padding:clamp(16px,4.5vw,22px);
+  margin:14px 0;
+}
+
+.content-card h3{font-size:16px;margin:0 0 4px}
+
+.meta{
+  color:var(--muted);
+  font-size:12px;
+  margin-bottom:14px;
+}
+
+.audio{
+  width:100%;
+  height:44px;
+  accent-color:#ed3943;
+  display:block;
+}
+
+.download{
+  display:inline-block;
+  color:#fff;
+  font-size:12px;
+  margin-top:10px;
+  border-bottom:1px dotted var(--gold);
+  padding-bottom:2px;
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:10px;
+}
+
+.gallery button{
+  border:0;
+  padding:0;
+  background:#111;
+  border-radius:10px;
+  overflow:hidden;
+  aspect-ratio:4/3;
+}
+
+.gallery img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .3s;
+}
+
+.gallery button:hover img{transform:scale(1.05)}
+
+.notice{
+  color:var(--muted);
+  font-size:13px;
+  background:#ffffff06;
+  border:1px dashed var(--line);
+  border-radius:10px;
+  padding:16px;
+  text-align:center;
+}
+
+footer{
+  border-top:1px solid var(--line);
+  padding:28px 0 36px;
+  color:var(--muted);
+  font-size:12px;
+  text-align:center;
+}
+
+footer strong{color:#fff}
+
+.lightbox{
+  position:fixed;
+  inset:0;
+  background:#000e;
+  z-index:50;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:16px;
+  overscroll-behavior:contain;
+}
+
+.lightbox.open{display:flex}
+
+.lightbox img{
+  max-width:min(95vw,900px);
+  max-height:85vh;
+  border-radius:8px;
+}
+
+.close{
+  position:absolute;
+  top:calc(12px + env(safe-area-inset-top));
+  left:16px;
+  width:44px;
+  height:44px;
+  border:1px solid #ffffff55;
+  color:#fff;
+  background:#111b;
+  border-radius:50%;
+  font-size:22px;
+  line-height:1;
+}
+
+@media (max-width:700px){
+  .links{display:none}
+  .menu-toggle{display:flex}
+  .event-grid{grid-template-columns:1fr}
+  .gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hero::before,.hero::after{top:40px}
+}
+
+@media (max-width:380px){
+  .brand small{display:none}
+  .seal{width:34px;height:34px;font-size:17px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation:none!important;
+    transition:none!important;
+    scroll-behavior:auto!important;
+  }
+}
+
+/* آخرین اطلاع‌رسانی مراسم */
+
+.last-notice{
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(135deg,#211416 0%,#151719 58%,#101112 100%);
+  border:1px solid rgba(213,31,42,.58);
+  border-radius:18px;
+  padding:clamp(22px,5vw,38px);
+  box-shadow:0 18px 50px #0005;
+}
+
+.last-notice::before{
+  content:"";
+  position:absolute;
+  inset:0 auto 0 0;
+  width:4px;
+  background:#d51f2a;
+}
+
+.notice-kicker{
+  color:#ed3943;
+  font-size:11px;
+  letter-spacing:1.5px;
+  margin-bottom:7px;
+}
+
+.last-notice h2{
+  font-size:clamp(22px,5vw,30px);
+  margin:0 0 20px;
+  color:#fff;
+}
+
+.notice-event{
+  font-size:clamp(17px,4vw,21px);
+  font-weight:700;
+  color:#fff;
+  margin-bottom:18px;
+}
+
+.notice-details{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+}
+
+.notice-detail{
+  background:#ffffff0d;
+  border:1px solid #ffffff20;
+  border-radius:11px;
+  padding:13px 15px;
+  color:#fff;
+  font-size:14px;
+}
+
+.notice-detail strong{
+  display:block;
+  color:#ed3943;
+  font-size:12px;
+  margin-bottom:3px;
+}
+
+.notice-invite{
+  margin:20px 0 0;
+  padding-top:16px;
+  border-top:1px solid rgba(213,31,42,.25);
+  color:#f4f0e8;
+  font-size:14px;
+}
+
+@media(max-width:560px){
+  .notice-details{grid-template-columns:1fr}
+  .last-notice{padding:22px 18px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#home" aria-label="هیئت انصارالمهدی، صفحه اصلی">
+      <span class="seal">ع</span>
+      <span>
+        هیئت انصارالمهدی (عج)
+        <small>پایگاه اطلاع‌رسانی و آرشیو مراسم</small>
+      </span>
+    </a>
+
+    <nav class="links" aria-label="ناوبری اصلی">
+      <a href="#home">خانه</a>
+      <a href="#noor">نور هدایت</a>
+      <a href="#events">مراسم</a>
+      <a href="#gallery-preview">گالری</a>
+    </nav>
+
+    <button class="menu-toggle" id="menuToggle"
+      aria-label="باز کردن منو"
+      aria-expanded="false"
+      aria-controls="mobileLinks">
+      <span></span>
+    </button>
+  </div>
+
+  <nav class="mobile-links" id="mobileLinks" aria-label="ناوبری موبایل">
+    <a href="#home">خانه</a>
+    <a href="#noor">نور هدایت</a>
+    <a href="#events">مراسم</a>
+    <a href="#gallery-preview">گالری</a>
+  </nav>
+</header>
+
+<main id="home">
+
+  <!-- صفحه اصلی -->
+
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div class="bism">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+      <div class="eyebrow">به نام بانوی آب و آینه</div>
+
+      <img class="hero-logo"
+        src="assets/hero-logo.png"
+        alt="لوگوی اصلی هیئت انصارالمهدی"
+        width="1471"
+        height="1536"
+        fetchpriority="high">
+
+      <div class="pill">تأسیس ۱۴۰۴</div>
+
+      <p>
+        اینجا گرد هم می‌آییم تا در پناه یاد اهل‌بیت علیهم‌السلام،
+        دل‌هایمان را به چراغ محبت روشن کنیم؛ و در روزهای سوگ مادر،
+        نام و یاد حضرت فاطمه زهرا سلام‌الله‌علیها را با اشک،
+        معرفت و همدلی زنده نگه داریم.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn" href="#events">مشاهده آرشیو مراسم</a>
+        <a class="btn ghost" href="#noor">نور هدایت</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- نور هدایت -->
+
+  <section class="light" id="noor">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="over">LIGHT OF GUIDANCE</div>
+        <h2>نور هدایت</h2>
+        <p>در پرتو آیات قرآن و کلام پیامبر اکرم (ص)</p>
+      </div>
+
+      <div class="hadith-card" aria-live="polite">
+        <div class="hadith-label" id="hadith-type">
+          حدیثی در شأن حضرت زهرا (س)
+        </div>
+
+        <div class="arabic" id="hadith-ar">
+          فَاطِمَةُ بَضْعَةٌ مِنِّي، فَمَنْ أَغْضَبَهَا أَغْضَبَنِي
+        </div>
+
+        <div class="translation" id="hadith-fa">
+          فاطمه پاره تن من است؛ هر کس او را به خشم آورد،
+          مرا به خشم آورده است.
+        </div>
+
+        <div class="source" id="hadith-source">
+          منبع: صحیح بخاری، کتاب فضائل اصحاب النبی
+        </div>
+
+        <div class="hadith-actions">
+          <button class="small-btn" id="prev">مطلب قبلی</button>
+          <button class="btn" id="next">نور بعدی ✦</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- آرشیو مراسم فاطمیه -->
+
+  <section id="events">
+    <div class="wrap">
+
+      <div class="section-head">
+        <div class="over">GATHERINGS &amp; ARCHIVE</div>
+        <h2>مراسم عزاداری</h2>
+        <p>گزارش‌ها، صوت‌ها و تصاویر مجالس هیئت انصارالمهدی</p>
+      </div>
+
+      <div class="event-grid">
+        <button class="event-card" type="button" onclick="openArchive()">
+          <span>
+            <h3>دهه دوم فاطمیه</h3>
+            <p>آرشیو صوتی و تصویری مراسم عزاداری حضرت فاطمه زهرا (س)</p>
+          </span>
+          <span class="event-icon" aria-hidden="true">🥀</span>
+        </button>
+      </div>
+
+      <div class="archive" id="archive">
+
+        <button class="back" type="button" onclick="closeArchive()">
+          → بازگشت به فهرست مراسم
+        </button>
+
+        <div class="archive-title">
+          <h2>گزارش مراسم عزاداری دهه دوم فاطمیه</h2>
+          <p>هیئت انصارالمهدی (عج) · آرشیو صوتی و تصویری</p>
+        </div>
+
+        <!-- سخنرانی -->
+
+        <div class="content-card">
+          <h3>🎙️ سخنرانی</h3>
+          <div class="meta">حجت‌الاسلام جواد دلپذیر</div>
+          <div class="notice">
+            فایل صوتی این بخش پس از بارگذاری اضافه می‌شود.
+          </div>
+        </div>
+
+        <!-- دکلمه -->
+
+        <div class="content-card">
+          <h3>📜 دکلمه</h3>
+          <div class="meta">حاج محمد قاضیان</div>
+          <div class="notice">
+            فایل صوتی این بخش پس از بارگذاری اضافه می‌شود.
+          </div>
+        </div>
+
+        <!-- زمینه -->
+
+        <div class="content-card">
+          <h3>🏴 زمینه</h3>
+          <div class="meta">
+            کربلایی محمدرضا عسکری و مداح نوجوان
+          </div>
+          <div class="notice">
+            فایل صوتی این بخش پس از بارگذاری اضافه می‌شود.
+          </div>
+        </div>
+
+        <!-- واحد و دودمه -->
+
+        <div class="content-card">
+          <h3>⚫ واحد و دودمه</h3>
+          <div class="meta">
+            کربلایی محمدرضا عسکری و مداح اهل بیت
+          </div>
+          <div class="notice">
+            فایل صوتی این بخش پس از بارگذاری اضافه می‌شود.
+          </div>
+        </div>
+
+        <!-- شور -->
+
+        <div class="content-card">
+          <h3>🎤 شور</h3>
+          <div class="meta">
+            کربلایی محمدرضا عسکری و مداحان نوجوان
+          </div>
+          <div class="notice">
+            فایل صوتی این بخش پس از بارگذاری اضافه می‌شود.
+          </div>
+        </div>
+
+        <!-- گزارش تصویری -->
+
+        <div class="content-card" id="gallery-preview">
+          <h3>🖼️ گزارش تصویری</h3>
+          <div class="meta">
+            گوشه‌هایی از مراسم عزاداری دهه دوم فاطمیه
+          </div>
+
+          <div class="gallery">
+
+            <button type="button" onclick="showImage(0)"
+              aria-label="نمایش تصویر اول">
+              <img src="assets/gallery-01.jpg"
+                alt="گزارش تصویری فاطمیه - تصویر اول"
+                loading="lazy">
+            </button>
+
+            <button type="button" onclick="showImage(1)"
+              aria-label="نمایش تصویر دوم">
+              <img src="assets/gallery-02.jpg"
+                alt="گزارش تصویری فاطمیه - تصویر دوم"
+                loading="lazy">
+            </button>
+
+            <button type="button" onclick="showImage(2)"
+              aria-label="نمایش تصویر سوم">
+              <img src="assets/gallery-03.jpg"
+                alt="گزارش تصویری فاطمیه - تصویر سوم"
+                loading="lazy">
+            </button>
+
+            <button type="button" onclick="showImage(3)"
+              aria-label="نمایش تصویر چهارم">
+              <img src="assets/gallery-04.jpg"
+                alt="گزارش تصویری فاطمیه - تصویر چهارم"
+                loading="lazy">
+            </button>
+
+            <button type="button" onclick="showImage(4)"
+              aria-label="نمایش تصویر پنجم">
+              <img src="assets/gallery-05.jpg"
+                alt="گزارش تصویری فاطمیه - تصویر پنجم"
+                loading="lazy">
+            </button>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- اطلاع‌رسانی -->
+
+  <section id="last-notice" aria-labelledby="last-notice-title">
+    <div class="wrap">
+      <div class="last-notice">
+
+        <div class="notice-kicker">LATEST ANNOUNCEMENT</div>
+
+        <h2 id="last-notice-title">اطلاع‌رسانی آخرین مراسم</h2>
+
+        <div class="notice-event">
+          عزاداری دهه دوم فاطمیه
+        </div>
+
+        <div class="notice-details">
+          <div class="notice-detail">
+            <strong>مکان برگزاری</strong>
+            مدرسه مفید، دوره اول، قیطریه
+          </div>
+
+          <div class="notice-detail">
+            <strong>زمان برگزاری</strong>
+            از نماز مغرب و عشاء
+          </div>
+        </div>
+
+        <p class="notice-invite">
+          پس از پایان مراسم، میهمان سفره پربرکت حضرت زهرا
+          سلام‌الله‌علیها خواهیم بود.
+          <br>
+          <strong>منتظر قدوم گرم شما هستیم.</strong>
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <strong>هیئت انصارالمهدی (عج)</strong>
+    <br>
+    با عشق اهل‌بیت (ع) · تأسیس ۱۴۰۴
+  </div>
+</footer>
+
+<!-- نمایش بزرگ تصاویر -->
+
+<div class="lightbox" id="lightbox"
+  onclick="hideImage()"
+  role="dialog"
+  aria-modal="true"
+  aria-label="نمایش تصویر">
+
+  <button class="close"
+    aria-label="بستن"
+    onclick="event.stopPropagation();hideImage()">×</button>
+
+  <img id="lightbox-img"
+    src=""
+    alt="تصویر بزرگ‌شده گزارش مراسم"
+    onclick="event.stopPropagation()">
+</div>
+
+<script>
+const menuToggle=document.getElementById('menuToggle');
+const mobileLinks=document.getElementById('mobileLinks');
+
+menuToggle.addEventListener('click',()=>{
+  const open=mobileLinks.classList.toggle('open');
+  menuToggle.setAttribute('aria-expanded',open);
+  menuToggle.setAttribute('aria-label',open?'بستن منو':'باز کردن منو');
+});
+
+mobileLinks.querySelectorAll('a').forEach(a=>{
+  a.addEventListener('click',()=>{
+    mobileLinks.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded','false');
+  });
+});
+
+// نور هدایت
+
+const items=[
+{
+  type:"آیه‌ای از قرآن کریم",
+  ar:"إِنَّا أَعْطَيْنَاكَ الْكَوْثَرَ",
+  fa:"ما به تو خیر فراوان عطا کردیم.",
+  src:"سوره مبارکه کوثر، آیه ۱"
+},
+{
+  type:"حدیث پیامبر اکرم (ص)",
+  ar:"فَاطِمَةُ بَضْعَةٌ مِنِّي، فَمَنْ أَغْضَبَهَا أَغْضَبَنِي",
+  fa:"فاطمه پاره تن من است؛ هر کس او را به خشم آورد، مرا به خشم آورده است.",
+  src:"صحیح بخاری، کتاب فضائل اصحاب النبی"
+},
+{
+  type:"حدیث پیامبر اکرم (ص)",
+  ar:"فَاطِمَةُ سَيِّدَةُ نِسَاءِ أَهْلِ الْجَنَّةِ",
+  fa:"فاطمه، سرور زنان اهل بهشت است.",
+  src:"صحیح بخاری، کتاب فضائل أصحاب النبی"
+}
+];
+
+let index=1;
+
+const elType=document.getElementById('hadith-type');
+const elAr=document.getElementById('hadith-ar');
+const elFa=document.getElementById('hadith-fa');
+const elSrc=document.getElementById('hadith-source');
+
+function renderHadith(){
+  const x=items[index];
+  elType.textContent=x.type;
+  elAr.textContent=x.ar;
+  elFa.textContent=x.fa;
+  elSrc.textContent='منبع: '+x.src;
+}
+
+document.getElementById('next').onclick=()=>{
+  index=(index+1)%items.length;
+  renderHadith();
+};
+
+document.getElementById('prev').onclick=()=>{
+  index=(index-1+items.length)%items.length;
+  renderHadith();
+};
+
+// آرشیو مراسم
+
+const archive=document.getElementById('archive');
+
+function openArchive(){
+  archive.classList.add('active');
+  archive.scrollIntoView({
+    behavior:'smooth',
+    block:'start'
+  });
+}
+
+function closeArchive(){
+  archive.classList.remove('active');
+  document.getElementById('events').scrollIntoView({
+    behavior:'smooth'
+  });
+}
+
+// گالری تصاویر
+
+const pics=[
+  "assets/gallery-01.jpg",
+  "assets/gallery-02.jpg",
+  "assets/gallery-03.jpg",
+  "assets/gallery-04.jpg",
+  "assets/gallery-05.jpg"
+];
+
+const lightbox=document.getElementById('lightbox');
+const lightboxImg=document.getElementById('lightbox-img');
+let lastFocused=null;
+
+function showImage(i){
+  lastFocused=document.activeElement;
+  lightboxImg.src=pics[i];
+  lightbox.classList.add('open');
+  document.body.style.overflow='hidden';
+  lightbox.querySelector('.close').focus();
+}
+
+function hideImage(){
+  lightbox.classList.remove('open');
+  document.body.style.overflow='';
+  if(lastFocused)lastFocused.focus();
+}
+
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'&&lightbox.classList.contains('open')){
+    hideImage();
+  }
+});
+
+// جابه‌جایی تصاویر با لمس موبایل
+
+let touchX=null;
+
+lightbox.addEventListener('touchstart',e=>{
+  touchX=e.touches[0].clientX;
+},{passive:true});
+
+lightbox.addEventListener('touchend',e=>{
+  if(touchX===null)return;
+
+  const dx=e.changedTouches[0].clientX-touchX;
+
+  if(Math.abs(dx)>60){
+    const current=pics.indexOf(lightboxImg.getAttribute('src'));
+    const nextIdx=dx<0
+      ?(current+1)%pics.length
+      :(current-1+pics.length)%pics.length;
+
+    lightboxImg.src=pics[nextIdx];
+  }
+
+  touchX=null;
+},{passive:true});
+</script>
+
+</body>
+</html>
